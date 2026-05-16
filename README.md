@@ -63,5 +63,18 @@ https://www.conventionalcommits.org/ru/v1.0.0-beta.4/#%D1%81%D0%BF%D0%B5%D1%86%D
 
 💡 Обратите внимание: если выход из просмотра логов не произошёл автоматически, нажмите клавишу `Q` (от англ. _**Q**_uit — «выйти») в английской раскладке клавиатуры.
 
+```mermaid
+sequenceDiagram
+    participant dotcom
+    participant iframe
+    participant viewscreen
+    dotcom->>iframe: loads html w/ iframe url
+    iframe->>viewscreen: request template
+    viewscreen->>iframe: html & javascript
+    iframe->>dotcom: iframe ready
+    dotcom->>iframe: set mermaid data on iframe
+    iframe->>iframe: render mermaid
+```
+
 
 
